@@ -1,0 +1,60 @@
+
+
+.services-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.service-item {
+  flex: 1 1 250px;
+  max-width: 320px;
+  padding: 1rem;
+}
+
+.service-icon {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.service-item h3 {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.service-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.learn-btn {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border: 1.5px solid #000;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.learn-btn:hover {
+  background-color: #f0f0f0;
+}

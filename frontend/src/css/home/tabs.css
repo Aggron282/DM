@@ -1,0 +1,40 @@
+.tabs-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.tabs-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  padding: 0.5rem;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  color: black;
+  border-bottom: 3px solid #00844f; /* green underline */
+}
+
+.tabs-content {
+  padding-top: 1rem;
+  font-size: 1.1rem;
+}

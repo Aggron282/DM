@@ -1,0 +1,52 @@
+body{
+  background: url("./../../imgs/rough.png") no-repeat center center/cover;
+}
+
+.pro-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.pro-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.pro-feature {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.pro-bg-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
+}
+
+.pro-overlay-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 40%;
+  height: 100%;
+  padding: 2rem;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent 90%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pro-overlay-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.pro-overlay-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+}

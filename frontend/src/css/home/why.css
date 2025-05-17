@@ -1,0 +1,40 @@
+.diagonal-hero {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 500px;
+  position: relative;
+  padding:30px;
+  margin-left: 60px;
+}
+
+.hero-text {
+  flex: 1;
+  background-color: #121212;
+  color: #f1f1f1;
+  padding: 4rem 3rem;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+  justify-content: center;
+  z-index: 2;
+  align-items: baseline;
+}
+
+.hero-text h2 {
+  width:100%;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  padding:30px;
+  padding-left: 0px;
+}
+
+.hero-image {
+  flex: 1;
+  transform: translateX(-100px);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
