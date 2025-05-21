@@ -3,7 +3,7 @@
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 8px 20px;
+  padding: 8px 24px;
   font-size: 14px;
   align-items: center;
 }
@@ -11,37 +11,111 @@
 .top-left span {
   margin-right: 16px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .top-right {
   display: flex;
-  gap: 16px;
   align-items: center;
+  gap: 16px;
 }
 
 .search-box {
   padding: 6px 12px;
   border-radius: 6px;
   border: none;
-  outline: none;
   background-color: white;
   color: black;
+  width: 200px;
 }
 
 .lang-switcher {
-  padding: 4px;
+  padding: 6px;
   border-radius: 4px;
 }
 
+.navbar {
+  background-color: white;
+  color: #003d22;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-left img.logo {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+.nav-links li a {
+  color: #003d22;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.nav-left{
+  color:limegreen;
+  font-size:30px;
+  display: inline;
+}
+.nav-links li a:hover {
+  color: #2EF768;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.top-nav a {
+  font-weight:200 !important;
+}
+.nav-right {
+  font-size:17px;
+}
+.top-left a{
+  color:white;
+  font-size:1.1rem;
+  font-weight: 300;
+}
+.top-right a {
+  color:white;
+  font-weight: 300;
+
+  font-size:1.1rem;
+}
+
+.navbar .title{
+  font-weight:800;
+  font-size: 3rem;
+  position: relative;
+  text-shadow: -2px 2px 0px black;
+  color:limegreen;
+  text-align: left;
+  z-index: 9;
+  transform: translateX(-150px);
+  margin-right: 100px;
+}
+
+
 .btn-outline {
-  padding: 10px 16px;
+  padding: 10px 18px;
   border: 2px solid #006D3B;
   background: white;
   color: #006D3B;
   border-radius: 24px;
   font-weight: bold;
   cursor: pointer;
-  margin-right: 12px;
 }
 
 .btn-cta {
@@ -49,7 +123,6 @@
   background-color: #2EF768;
   color: #003d22;
   font-weight: bold;
-  border: none;
   border-radius: 24px;
   text-decoration: none;
 }
