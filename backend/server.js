@@ -10,6 +10,10 @@ const connectDB = require("./util/db.js");
 const quoteRoutes = require("./routes/api_routes.js");
 
 
+// Serve static files from the React frontend
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+
 app.use(cors({
   origin: ["http://localhost:3003","http://localhost:3000","https://scrapsquad-883401bf1df6.herokuapp.com/"],  // Your React frontend
   credentials: true
@@ -29,6 +33,10 @@ connectDB();
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+// Wildcard route (after API routes)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+});
 
 
 
