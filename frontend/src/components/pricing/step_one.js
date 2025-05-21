@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./../../css/pricing/quote.css";
-import IMG from "./../../imgs/landing.png";
+import IMG from "./../../imgs/landfill.png";
 
 function StepOneUserInfo({ formData, setFormData, nextStep }) {
   const [error, setError] = useState("");

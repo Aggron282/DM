@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Quoter from "./components/pricing/quoter.js"; // (You’ll create this)
 
 import Navbar from "./components/navbar.js";
 import LandingHero from "./components/home/landing.js";
@@ -13,7 +14,6 @@ import Intro from "./components/home/intro.js";
 import Footer from "./components/footer.js";
 
 // New import: PricingPage component
-import Quoter from "./components/pricing/quoter.js"; // (You’ll create this)
 
 function HomePage() {
   return (

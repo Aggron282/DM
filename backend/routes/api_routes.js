@@ -1,6 +1,11 @@
-var router = require("express").Router();
-var controller = require("./../controllers/api_controller.js");
+const router = require("express").Router();
+const controller = require("./../controllers/api_controller.js");
+const multer = require("multer");
 
-router.post("/quote",controller.ProcessQuote);
+const storage = multer.memoryStorage(); // or configure diskStorage if you want to save files
+const upload = multer({ storage });
+
+router.post("/api/quote", upload.array("images"), controller.ProcessQuote);
+
 
 module.exports = router;

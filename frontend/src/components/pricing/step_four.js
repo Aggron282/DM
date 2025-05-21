@@ -21,6 +21,7 @@ function StepFourConfirmation() {
         </div>
         <h1>We’ll Contact You Shortly!</h1>
         <p>Your custom quote was submitted successfully.</p>
+        <p><a href="/" className="a">Click here</a> to go to main site</p>
       </div>
     </div>
   );

@@ -36,6 +36,7 @@ function StepThreeUploader({ formData, setFormData, nextStep, prevStep,submitQuo
 
   return (
     <div className="upload-step">
+
   <div className="upload-grid">
     {/* LEFT: Upload Area */}
     <div className="upload-left">
@@ -71,8 +72,9 @@ function StepThreeUploader({ formData, setFormData, nextStep, prevStep,submitQuo
 
   {/* Buttons */}
   <div className="form-nav">
-    <button className="nav-btn" onClick = {submitQuote}>Submit</button>
-    <button className="nav-btn" onClick={prevStep}>Previous</button>
+  <button className="nav-btn "  onClick={prevStep}>Previous</button>
+  <button className="nav-btn submit-btn" onClick = {submitQuote}>Submit</button>
+
 
   </div>
 </div>

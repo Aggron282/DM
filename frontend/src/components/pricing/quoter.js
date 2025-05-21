@@ -4,9 +4,11 @@ import StepTwoDetails from "./step_two";
 import StepThreeUploader from "./step_three";
 import StepFourConfirmation from "./step_four";
 import { useState } from "react";
-
+import QuoteLoadingOverlay from "./loader.js"
+import axios from "axios";
 function QuoteSlider() {
   const [step, setStep] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     address: "",
@@ -24,59 +26,47 @@ function QuoteSlider() {
 
   // ✅ Add this function to submit the data
   const submitQuote = async () => {
-    try {
-      const data = new FormData();
+  try {
+    setLoading(true); // Show loader
 
-      // Append fields
-      data.append("name", formData.name);
-      data.append("address", formData.address);
-      data.append("email", formData.email);
-      data.append("phone", formData.phone);
-      data.append("items", formData.items);
-      data.append("notes", formData.notes);
-      data.append("date", formData.date);
-      data.append("urgent", formData.urgent);
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("address", formData.address);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("items", formData.items);
+    data.append("notes", formData.notes);
+    data.append("date", formData.date);
+    data.append("urgent", formData.urgent);
+    data.append("weights", JSON.stringify(formData.weights));
+    formData.images.forEach((file) => data.append("images", file));
 
-      // Convert weights to JSON string
-      data.append("weights", JSON.stringify(formData.weights));
+    const response = await axios.post("http://localhost:3003/api/quote", data);
+    console.log("✅ Quote submitted:", response.data);
 
-      // Append images
-      formData.images.forEach((file, index) => {
-        data.append("images", file);
-      });
-
-      const response = await fetch("/api/quote", {
-        method: "POST",
-        body: data
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit quote");
-      }
-
-      console.log("Quote submitted successfully");
-      setStep(4); // Move to confirmation step
-
-    } catch (err) {
-      console.error("Submission error:", err);
-      setStep(4); // Move to confirmation step
-
-      alert("There was an issue submitting your quote. Please try again.");
-    }
-  };
+  } catch (err) {
+    console.error("❌ Submission error:", err);
+    alert("There was an issue submitting your quote. Please try again.");
+  } finally {
+    setLoading(false);     // Hide loader
+    setStep(4);            // Show confirmation
+  }
+};
 
   return (
     <div className="quote-blur-wrapper">
+      {loading && <QuoteLoadingOverlay />}
+      <p class="title">Scrap Squad </p>
+
       <div className="quote-container">
         <div className="quote-trust-badges">
           <div>✅ Licensed & Insured</div>
-          <div>🚚 112+ Happy Clients</div>
+          <div>🚚 Serving the Greater Phoenix Area</div>
           <div>5.0 ★ Average Rating</div>
         </div>
 
         <div className="quote-hero-bar">
           <h1>Get Your Custom Junk Removal Quote</h1>
-          <p>Fast. Transparent. Guaranteed.</p>
         </div>
 
         <div className="quote-inner-wrapper">
@@ -91,6 +81,7 @@ function QuoteSlider() {
           </div>
 
           <div className="quote-step-content">
+
             {step === 1 && (
               <StepOneUserInfo
                 formData={formData}
@@ -119,6 +110,7 @@ function QuoteSlider() {
           </div>
         </div>
       </div>
+      <a href = "/"><p className="goback">Back to Main Site </p></a>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./../../css/pricing/step_two.css";
-import IMG from "./../../imgs/landing.png";
+import IMG from "./../../imgs/landfill2.png";
 
 function StepTwoDetails({ formData, setFormData, nextStep, prevStep }) {
   const [urgent, setUrgent] = useState(formData.urgent || false);
@@ -24,7 +24,7 @@ function StepTwoDetails({ formData, setFormData, nextStep, prevStep }) {
 
   // Add schedule date with auto-next-day logic
   const addScheduleDate = () => {
-    const currentDates = formData.scheduleDates || [];
+    const currentDates = formData.date || [];
     let nextDate = new Date();
     if (currentDates.length > 0) {
       const lastDate = new Date(currentDates[currentDates.length - 1]);
@@ -32,24 +32,24 @@ function StepTwoDetails({ formData, setFormData, nextStep, prevStep }) {
       nextDate.setDate(lastDate.getDate() + 1);
     }
     const iso = nextDate.toISOString().split("T")[0];
-    setFormData({ ...formData, scheduleDates: [...currentDates, iso] });
+    setFormData({ ...formData, date: [...currentDates, iso] });
   };
 
   const updateScheduleDate = (i, val) => {
-    const updated = [...formData.scheduleDates];
+    const updated = [...formData.date];
     updated[i] = val;
-    setFormData({ ...formData, scheduleDates: updated });
+    setFormData({ ...formData, date: updated });
   };
 
   const deleteScheduleDate = (i) => {
-    const updated = formData.scheduleDates.filter((_, index) => index !== i);
-    setFormData({ ...formData, scheduleDates: updated });
+    const updated = formData.date.filter((_, index) => index !== i);
+    setFormData({ ...formData, date: updated });
   };
 
   // Validation
   const validateAndContinue = () => {
     const weightsValid = formData.weights.every(w => w && !isNaN(Number(w)));
-    const datesValid = !urgent && formData.scheduleDates?.length > 0;
+    const datesValid = !urgent && formData.date?.length > 0;
     if (!formData.items || !weightsValid || (!urgent && !datesValid)) {
       setErrors("Please fill all fields with valid data.");
       return;
@@ -75,7 +75,7 @@ function StepTwoDetails({ formData, setFormData, nextStep, prevStep }) {
           </div>
           <div className="form-group">
             <label>Preferred Dates</label>
-            {!urgent && (formData.scheduleDates || []).map((d, i) => (
+            {!urgent && (formData.date || []).map((d, i) => (
               <div className="weight-row" key={i}>
                 <input
                   type="date"
@@ -121,7 +121,7 @@ function StepTwoDetails({ formData, setFormData, nextStep, prevStep }) {
             className={`urgent-btn ${urgent ? "active" : ""}`}
             onClick={() => {
               setUrgent(!urgent);
-              setFormData({ ...formData, urgent: !urgent, scheduleDates: [] });
+              setFormData({ ...formData, urgent: !urgent, date: [] });
             }}
           >
             {!urgent ? "Tell us to come ASAP" : "Go on Date Specified"}
