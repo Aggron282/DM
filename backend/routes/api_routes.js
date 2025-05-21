@@ -5,7 +5,7 @@ const multer = require("multer");
 const storage = multer.memoryStorage(); // or configure diskStorage if you want to save files
 const upload = multer({ storage });
 
-router.post("/quote", upload.array("images"), controller.ProcessQuote);
+router.post("/api/quote", upload.array("images"), controller.ProcessQuote);
 
 
 module.exports = router;

@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 // const app = express();
 app.use(express.json());
-app.use("/", quoteRoutes);
+app.use(quoteRoutes);
 connectDB();
 
 
