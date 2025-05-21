@@ -34,8 +34,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="https://scrapsquad-883401bf1df6.herokuapp.com/" element={<HomePage />} />
-        <Route path="https://scrapsquad-883401bf1df6.herokuapp.com/pricing" element={<Quoter />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pricing" element={<Quoter />} />
       </Routes>
     </BrowserRouter>
   );

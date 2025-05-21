@@ -28,9 +28,17 @@ app.use(express.json());
 app.use("/", quoteRoutes);
 connectDB();
 
-const PORT = process.env.PORT || 5000;
 
 
+// Catch-all fallback (no "*")
+app.use((req, res, next) => {
+  // If the request doesn't match a file or API route, serve index.html
+  res.sendFile(path.join(buildPath, "index.html"), function (err) {
+    if (err) {
+      next(err);
+    }
+  });
+});
 
 
 
