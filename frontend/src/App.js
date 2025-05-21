@@ -1,3 +1,5 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar.js";
 import LandingHero from "./components/home/landing.js";
@@ -10,11 +12,12 @@ import Testimonial from "./components/home/testimonial.js";
 import Intro from "./components/home/intro.js";
 import Footer from "./components/footer.js";
 
-// import About from "./components/home/about.js";
+// New import: PricingPage component
+import Quoter from "./components/pricing/quoter.js"; // (You’ll create this)
 
-function App() {
-  return(
-    <div>
+function HomePage() {
+  return (
+    <>
       <Navbar />
       <LandingHero />
       <Services />
@@ -23,8 +26,19 @@ function App() {
       <Why />
       <Pro />
       <Footer />
-    </div>
-  )
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pricing" element={<Quoter />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

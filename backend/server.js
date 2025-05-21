@@ -1,9 +1,27 @@
+require("dotenv").config(); // <--- at the very top
+
+// const express = require("express");
+// const connectDB = require("./db");
+
 var port = process.env.PORT || 3003;
 var path = require("path");
 var express = require("express");
 var cors = require("cors");
 var app = express();
 var bodyParser = require("body-parser");
+// const express = require("express");
+const connectDB = require("./util/db.js");
+const quoteRoutes = require("./routes/api_routes.js");
+require("dotenv").config();
+
+// const app = express();
+app.use(express.json());
+app.use("/api/", quoteRoutes);
+
+connectDB();
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 app.use(bodyParser.urlencoded({extended:true}));
 
