@@ -11,7 +11,6 @@ const quoteRoutes = require("./routes/api_routes.js");
 
 
 // Serve static files from the React frontend
-app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 
 app.use(cors({
@@ -22,20 +21,16 @@ app.set('trust proxy', 1);
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "./../frontend/build")));
 
 // const app = express();
 app.use(express.json());
-app.use(quoteRoutes);
-
+app.use("/", quoteRoutes);
 connectDB();
 
 const PORT = process.env.PORT || 5000;
 
-// Wildcard route (after API routes)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
-});
+
 
 
 

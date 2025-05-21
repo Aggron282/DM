@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Quote = require("../models/quote.js");
-const pdfMaker = require("../util/pdf_maker.js");
-const emailer = require("../util/emailer");
+const Quote = require("./../models/quote.js");
+const pdfMaker = require("./../util/pdf_maker.js");
+const emailer = require("./../util/emailer");
 const path = require("path");
 
 async function ProcessQuote(req,res){
