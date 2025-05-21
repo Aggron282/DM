@@ -29,7 +29,7 @@ background-size: cover;
 a {
   text-decoration: none;
 }
-.title{
+.quote-blur-wrapper .title{
   position: absolute;
   top:-10px;
   color:grey !important;
