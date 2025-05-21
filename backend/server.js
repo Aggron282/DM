@@ -8,7 +8,10 @@ var bodyParser = require("body-parser");
 // const express = require("express");
 const connectDB = require("./util/db.js");
 const quoteRoutes = require("./routes/api_routes.js");
+const frontendBuildPath = path.join(__dirname, "./../frontend/build");
 
+// Serve static files from React
+app.use(express.static(frontendBuildPath));
 
 // Serve static files from the React frontend
 
@@ -21,7 +24,6 @@ app.set('trust proxy', 1);
 
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use(express.static(path.join(__dirname, "./../frontend/build")));
 
 // const app = express();
 app.use(express.json());
@@ -33,7 +35,7 @@ connectDB();
 // Catch-all fallback (no "*")
 app.use((req, res, next) => {
   // If the request doesn't match a file or API route, serve index.html
-  res.sendFile(path.join(buildPath, "index.html"), function (err) {
+  res.sendFile(path.join(frontendBuildPath, "index.html"), function (err) {
     if (err) {
       next(err);
     }
