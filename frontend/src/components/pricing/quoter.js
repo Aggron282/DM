@@ -41,7 +41,7 @@ function QuoteSlider() {
     data.append("weights", JSON.stringify(formData.weights));
     formData.images.forEach((file) => data.append("images", file));
 
-    const response = await axios.post("http://scrapsquad-883401bf1df6.herokuapp.com/api/quote", data);
+    const response = await axios.post("/api/quote", data);
     console.log("✅ Quote submitted:", response.data);
 
   } catch (err) {
