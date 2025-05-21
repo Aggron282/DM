@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Quote = require("../models/Quote");
+const Quote = require("../models/quote.js");
 const pdfMaker = require("../util/pdf_maker.js");
 const emailer = require("../util/emailer");
 const path = require("path");
@@ -36,7 +36,7 @@ async function ProcessQuote(req,res){
     // 4. Generate PDFs
     const customerPDF = await pdfMaker.generateQuotePDF(quoteData, `${newQuote._id}_customer.pdf`);
     const ownerPDF = await pdfMaker.generateQuotePDF(quoteData, `${newQuote._id}_owner.pdf`);
-  
+
     // 5. Save PDF paths
     newQuote.customerPDF = customerPDF;
     newQuote.ownerPDF = ownerPDF;
