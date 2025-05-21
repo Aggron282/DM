@@ -31,7 +31,6 @@ app.use(quoteRoutes);
 connectDB();
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Wildcard route (after API routes)
 app.get("*", (req, res) => {
