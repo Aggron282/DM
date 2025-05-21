@@ -26,50 +26,41 @@ function Navbar() {
   return (
     <>
       {/* Discount Banner */}
-      <div className="discount-banner">
-        Sign up today and get 25% off your first service!
-      </div>
+      {/* Top Utility Bar */}
+  <div className="top-nav">
+    <div className="top-left">
+      <span>Residential</span>
+      <span>Commercial</span>
+    </div>
+    <div className="top-right">
+      <input type="text" placeholder="Search" className="search-box" />
+      <a href="/login">Log In</a>
+      <a href="/billing">Pay My Bill</a>
+      <select className="lang-switcher">
+        <option>US/EN</option>
+        <option>ES</option>
+      </select>
+    </div>
+  </div>
 
-      {/* Main Navbar */}
-      <nav className="navbar" id="mainNavbar">
-        <div className="nav-left">
-          <a href="/" className="logo-link">
-            <img
-              src={Logo}
-              alt="Company Logo"
-              className="logo"
-            />
-            <span className="company-name">Junk Removal Services </span>
-          </a>
-        </div>
-        <ul className="nav-links">
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/dumping-101">Dumping 101</a></li>
-          <li><a href="/pricing" className="nav-pricing">Pricing</a></li>
-        </ul>
-        <div className="nav-right">
-          <a href="tel:1-844-777-8483" className="phone-number">Call 1-844-777-8483</a>
-        </div>
-      </nav>
-
-      {/* Sticky Navbar (on scroll) */}
-      <nav className="navbar sticky" id="stickyNavbar">
-        <div className="nav-left">
-          <a href="/" className="logo-link">
-            <span className="company-name">DumpAway Pros</span>
-          </a>
-        </div>
-        <ul className="nav-links">
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/dumping-101">Dumping 101</a></li>
-          <li><a href="/pricing">Pricing</a></li>
-        </ul>
-        <div className="nav-right">
-          <a href="tel:1-844-777-8483" className="phone-number">📞 1-844-777-8483</a>
-        </div>
-      </nav>
+  {/* Main Nav */}
+  <nav className="navbar" id="mainNavbar">
+    <div className="nav-left">
+      <a href="/" className="logo-link">
+        <img src={Logo} alt="Company Logo" className="logo" />
+      </a>
+    </div>
+    <ul className="nav-links">
+      <li><a href="/services">Services</a></li>
+      <li><a href="/dumping-101">Dumping 101</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Support</a></li>
+    </ul>
+    <div className="nav-right">
+      <button className="btn-outline">Branch Finder</button>
+      <a href="/pricing" className="btn-cta">See Pricing</a>
+    </div>
+  </nav>
 
 
     </>

@@ -1,121 +1,55 @@
-
-.discount-banner {
-  background-color: #2EF768;
-  color: black;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
-}
-body, html{
-  font-family: "DM Sans";
-  padding: 0;
-  margin: 0;
-  box-sizing:border-box;
-}
-.navbar {
+.top-nav {
   background-color: #006D3B;
   color: white;
   display: flex;
   justify-content: space-between;
+  padding: 8px 20px;
+  font-size: 14px;
   align-items: center;
-  padding: 20px 24px;
-  position: relative;
-  z-index: 10;
 }
 
-
-
-.logo {
-  height: 100px;
-  margin-right: 10px;
+.top-left span {
+  margin-right: 16px;
+  cursor: pointer;
 }
 
-.logo-link {
+.top-right {
   display: flex;
+  gap: 16px;
   align-items: center;
-  text-decoration: none;
-  color: white;
 }
 
-.company-name {
-  font-size:1.7rem;
-  padding:10px;
-  background:#003d22   ;
-  color:white;
-  border-radius:20px;
-  box-shadow:0px 0px 10px rgba(0,0,0,.5);
-
-  font-weight: 200;
+.search-box {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-top:10px;
+.lang-switcher {
+  padding: 4px;
+  border-radius: 4px;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-.phone-number {
-  color: white;
-  font-size:25px;
-  text-decoration: none;
+.btn-outline {
+  padding: 10px 16px;
+  border: 2px solid #006D3B;
+  background: white;
+  color: #006D3B;
+  border-radius: 24px;
   font-weight: bold;
+  cursor: pointer;
+  margin-right: 12px;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: none;
-  background-color: #006D3B;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  /* font-size:20px; */
-
-  padding: 0;
-  padding-bottom:20px;
-  padding-top:20px;
-  gap: 32px; /* Spacing between items */
-}
-
-.nav-links li a {
-  color: white;
-  font-weight: 300;
-  font-size: 22px;
+.btn-cta {
+  padding: 10px 20px;
+  background-color: #2EF768;
+  color: #003d22;
+  font-weight: bold;
+  border: none;
+  border-radius: 24px;
   text-decoration: none;
-  padding: 8px 0;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
-  border-bottom: 2px solid transparent;
 }
-
-.nav-links li a:hover {
-  color: #2EF768; /* Optional highlight on hover */
-  border-bottom: 2px solid #2EF768;
-  text-decoration: none;
-
-}
-
-
-.nav-pricing{
-  padding:15px !important;
-  border-radius:20px !important;
-  box-shadow: 0px 0px 10px rgba(0,0,0,.5) !important;
-  }
